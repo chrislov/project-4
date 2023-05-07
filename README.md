@@ -80,3 +80,64 @@ Add a file to it named server.js and the result is the screenshot below
 Express is a minimal and flexible Node.js web application framework that provides features for web and mobile applications. We will use Express in to pass book information to and from our MongoDB database.
 
 We also will use Mongoose package which provides a straight-forward, schema-based solution to model your application data. We will use Mongoose to establish a schema for the database to store data of our book register.
+
+sudo npm install express mongoose. and you will you will see result like this.
+
+![pro    (7)     ](https://user-images.githubusercontent.com/112444993/236699427-2dcc3fa2-62eb-4e09-871a-767fe9989770.jpg)
+
+In ‘Books’ folder, create a folder named apps
+
+mkdir apps && cd apps
+Create a file named routes.js
+
+vi routes.js
+In the ‘apps’ folder, create a folder named models
+
+mkdir models && cd models
+Create a file named book.js
+
+vi book.js
+
+Step 4 – Access the routes with AngularJS
+AngularJS provides a web framework for creating dynamic views in your web applications. In this tutorial, we use AngularJS to connect our web page with Express and perform actions on our book register.
+
+Change the directory back to ‘Books’
+
+cd ../..
+Create a folder named public
+
+mkdir public && cd public
+Add a file named script.js
+
+vi script.js
+
+In public folder, create a file named index.html;
+
+vi index.html
+
+Change the directory back up to Books
+
+cd ..
+Start the server by running this command:
+
+node server.js
+The server is now up and running, we can connect it via port 3300. You can launch a separate Putty or SSH console to test what curl command returns locally.
+
+curl -s http://localhost:3300
+It shall return an HTML page, it is hardly readable in the CLI, but we can also try and access it from the Internet.
+
+For this – you need to open TCP port 3300 in your AWS Web Console for your EC2 Instance.
+
+You are supposed to know how to do it, if you have forgotten – refer to Project 1 (Step 1 — Installing Apache and Updating the Firewall)
+
+Now you can access our Book Register web application from the Internet with a browser using Public IP address or Public DNS name.
+
+Quick reminder how to get your server’s Public IP and public DNS name:
+
+You can find it in your AWS web console in EC2 details
+Run curl -s http://169.254.169.254/latest/meta-data/public-ipv4 for Public IP address or curl -s http://169.254.169.254/latest/meta-data/public-hostname for Public DNS name.
+This is how your Web Book Register Application will look like in browser:
+
+
+![pro (10)](https://user-images.githubusercontent.com/112444993/236700931-29a3ce50-cb9f-4ef6-a24a-2c7594ad8454.jpg)
+
